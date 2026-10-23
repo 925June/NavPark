@@ -1,6 +1,6 @@
-# Parking AI
+# NavPark
 
-Parking AI is a FastAPI application that uses a LangGraph workflow to route parking-related questions to specialized agents.
+NavPark is a FastAPI application that uses a LangGraph workflow to route parking-related questions to specialized agents.
 
 ## What It Does
 
