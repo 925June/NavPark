@@ -82,6 +82,19 @@ NavPark 是一个面向地下停车场的开源 AI 停车礼宾项目，使用 F
 
 ## 1. 项目介绍
 
+<p align="center">
+  <img src="docs/screenshots/navpark-web-login.jpg" alt="NavPark 网页端注册登录" width="48%">
+  <img src="docs/screenshots/navpark-web-console.jpg" alt="NavPark 网页端智能停车控制台" width="48%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/navpark-mobile-console-split.jpg" alt="NavPark 手机端产品界面（上下两段左右拼接）" width="72%">
+</p>
+
+<p align="center">
+  <sub>网页端注册登录 · 网页端智能停车控制台 · 手机端停车礼宾</sub>
+</p>
+
 ### 1.1 项目解决什么问题
 
 NavPark 面向以下停车场景：
