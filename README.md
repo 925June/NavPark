@@ -1,4 +1,4 @@
-# NavPark 智能停车礼宾
+# NavPark 智能停车场助手
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
