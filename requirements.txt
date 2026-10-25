@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+
+langgraph
+langchain
+langchain-openai
+
+python-dotenv
+
+pydantic
+
+chromadb
+
+httpx
+
+pytest
+qrcode

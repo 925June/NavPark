@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e2d7">
+  <title>手机访问 · NavPark</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/mobile.css">
+</head>
+<body>
+  <main class="mobile-card">
+    <header class="mobile-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>NavPark</strong>
+          <small>MOBILE CONCIERGE</small>
+        </span>
+      </a>
+      <a class="back-link" href="/">返回桌面版</a>
+    </header>
+
+    <section class="intro">
+      <span class="eyebrow">PHONE ACCESS</span>
+      <h1>用手机扫一扫，<br><em>把停车礼宾带在身边。</em></h1>
+      <p>让手机和这台电脑连接同一个 Wi-Fi，然后用手机相机扫描下方二维码。</p>
+    </section>
+
+    <section class="qr-panel" aria-live="polite">
+      <div class="qr-frame">
+        <img id="mobile-qr" src="/mobile/qr.svg" alt="手机访问 NavPark 的二维码">
+      </div>
+      <div class="address-block">
+        <span>手机访问地址</span>
+        <a id="mobile-url" href="/">正在生成地址…</a>
+        <div class="actions">
+          <button id="copy-url" type="button">复制地址</button>
+          <a id="open-url" href="/" target="_blank" rel="noopener">在新窗口打开</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="secure-notice" class="notice">
+      <strong>手机端使用提示</strong>
+      <p id="secure-message">正在检查当前访问环境…</p>
+    </section>
+
+    <section class="steps">
+      <article>
+        <span>01</span>
+        <strong>连接同一 Wi-Fi</strong>
+        <p>电脑和手机需要在同一个局域网内。</p>
+      </article>
+      <article>
+        <span>02</span>
+        <strong>使用相机扫码</strong>
+        <p>也可以手动输入上方地址，然后打开浏览器。</p>
+      </article>
+      <article>
+        <span>03</span>
+        <strong>注册并开始提问</strong>
+        <p>开发环境验证码会自动填入，不需要真实短信。</p>
+      </article>
+    </section>
+
+    <footer>
+      <span>NAVPARK · PARKING, COMPOSED.</span>
+      <span>二维码仅指向当前局域网服务</span>
+    </footer>
+  </main>
+  <script src="/static/mobile.js" defer></script>
+</body>
+</html>

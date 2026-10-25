@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e2d7">
+  <meta name="description" content="NavPark 智能停车礼宾服务">
+  <title>NavPark · 停车礼宾</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/styles.css?v=20261025-live-map">
+</head>
+<body>
+  <div class="paper-texture" aria-hidden="true"></div>
+
+  <section id="auth-gate" class="auth-gate" aria-labelledby="auth-title">
+    <div class="auth-shell">
+      <header class="auth-header">
+        <a class="brand" href="/" aria-label="NavPark 首页">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span class="brand-copy">
+            <strong>NavPark</strong>
+            <small>PRIVATE PARKING SERVICE</small>
+          </span>
+        </a>
+        <span class="auth-header-note">MEMBER ACCESS · 手机号登录</span>
+      </header>
+
+      <div class="auth-layout">
+        <div class="auth-editorial">
+          <span class="hero-kicker">YOUR PARKING, PERSONAL.</span>
+          <h1 id="auth-title">为每一次抵达，<br><em>留好一个位置。</em></h1>
+          <p>
+            使用手机号验证码注册或登录。你的停车偏好、会话记录和场内导航会安全地归属于当前账号。
+          </p>
+          <div class="auth-proof">
+            <span>01 · 实时空位</span>
+            <span>02 · A* 场内导航</span>
+            <span>03 · 独立会话</span>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <span class="chat-overline">MEMBER CONCIERGE</span>
+          <h2 id="auth-card-title">创建你的 NavPark 账号</h2>
+          <p id="auth-card-description">
+            新用户使用手机号完成验证后即可进入。
+          </p>
+
+          <div class="auth-tabs" role="tablist" aria-label="手机号登录方式">
+            <button
+              id="register-tab"
+              class="auth-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-auth-mode="register"
+            >注册</button>
+            <button
+              id="login-tab"
+              class="auth-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-auth-mode="login"
+            >登录</button>
+          </div>
+
+          <form id="auth-form" class="auth-form">
+            <label class="auth-field" for="auth-phone">
+              <span>手机号</span>
+              <div class="phone-input">
+                <span>+86</span>
+                <input
+                  id="auth-phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="numeric"
+                  autocomplete="tel-national"
+                  maxlength="11"
+                  placeholder="请输入 11 位手机号"
+                  required
+                >
+              </div>
+            </label>
+
+            <label class="auth-field" for="auth-code">
+              <span>短信验证码</span>
+              <div class="code-input-row">
+                <input
+                  id="auth-code"
+                  name="code"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="one-time-code"
+                  maxlength="6"
+                  placeholder="6 位验证码"
+                  required
+                >
+                <button id="request-code-button" class="code-button" type="button">
+                  获取验证码
+                </button>
+              </div>
+            </label>
+
+            <label id="display-name-field" class="auth-field" for="auth-name">
+              <span>怎么称呼你 <small>可选</small></span>
+              <input
+                id="auth-name"
+                name="display_name"
+                type="text"
+                autocomplete="nickname"
+                maxlength="40"
+                placeholder="例如：林先生"
+              >
+            </label>
+
+            <button id="auth-submit" class="auth-submit" type="submit">
+              <span id="auth-submit-text">注册并进入</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 14-7-4.5 14-3-5.5L5 12Z"></path>
+              </svg>
+            </button>
+            <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+            <p class="auth-consent">
+              继续即表示你同意仅将手机号用于账号验证和停车服务相关通知。
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <footer class="auth-footer">
+        <span>NAVPARK · PARKING, COMPOSED.</span>
+        <span>验证码 5 分钟内有效 · 登录状态保留 30 天</span>
+      </footer>
+    </div>
+  </section>
+
+  <div id="app-shell" class="app-shell is-hidden" aria-hidden="true">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="NavPark 首页">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span class="brand-copy">
+          <strong>NavPark</strong>
+          <small>PRIVATE PARKING SERVICE</small>
+        </span>
+      </a>
+
+      <div class="topbar-meta">
+        <a class="mobile-access-button" href="/mobile" target="_blank" rel="noopener">
+          手机访问
+        </a>
+        <span class="user-chip">
+          <b id="current-user-name">NavPark 用户</b>
+          <small id="current-user-phone"></small>
+        </span>
+        <span class="connection" id="service-status">
+          <i></i>
+          正在连接
+        </span>
+        <span class="model-label">
+          <span>AI</span>
+          <strong id="model-name">DeepSeek</strong>
+        </span>
+        <button id="logout-button" class="logout-button" type="button">退出</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="editorial-panel" aria-labelledby="page-heading">
+        <div class="editorial-meta">
+          <span>NAVPARK / CONCIERGE</span>
+          <span>NO. 01 · EST. 2026</span>
+        </div>
+
+        <div class="hero-block">
+          <span class="hero-kicker">SMART PARKING, QUIETLY DONE.</span>
+          <h1 id="page-heading">每一次抵达，<br><em>都从容有序。</em></h1>
+          <p>
+            NavPark 以安静、清晰的方式，为你的停车时刻提供
+            实时空位、场内导航与服务协助。
+          </p>
+        </div>
+
+        <section
+          id="route-map"
+          class="route-plate live-route-map"
+          aria-labelledby="route-map-title"
+        >
+          <div class="route-plate-top live-map-header">
+            <div>
+              <span id="route-map-title">LIVE INDOOR MAP</span>
+              <small>实时室内导航</small>
+            </div>
+            <span id="route-map-live-state" class="map-live-state">
+              <i></i>
+              <span>等待路线</span>
+            </span>
+          </div>
+
+          <div class="live-map-canvas">
+            <svg
+              id="route-map-svg"
+              class="live-map-svg"
+              viewBox="0 0 1020 720"
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              aria-label="停车场实时室内导航地图"
+            >
+              <defs>
+                <filter id="routeGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+                  <feMerge>
+                    <feMergeNode in="blur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                  </feMerge>
+                </filter>
+                <marker
+                  id="routeArrow"
+                  viewBox="0 0 10 10"
+                  refX="8"
+                  refY="5"
+                  markerWidth="5"
+                  markerHeight="5"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#e6b28e"></path>
+                </marker>
+              </defs>
+              <g id="route-map-base"></g>
+              <g id="route-map-route"></g>
+              <g id="route-map-overlay"></g>
+            </svg>
+
+            <div id="route-map-empty" class="map-empty-state">
+              <span>NAVPARK INDOOR A*</span>
+              <strong>说出目的地，路线即刻出现</strong>
+              <small>试试：“帮我导航到 B2 A035 停车位”</small>
+            </div>
+
+            <div
+              id="route-map-floor-tabs"
+              class="map-floor-tabs"
+              role="tablist"
+              aria-label="切换停车场楼层"
+            ></div>
+            <span class="map-north" aria-hidden="true">N ↑</span>
+          </div>
+
+          <div class="map-readout">
+            <div>
+              <span>路线</span>
+              <strong id="route-map-distance">--</strong>
+            </div>
+            <div>
+              <span>预计</span>
+              <strong id="route-map-eta">--</strong>
+            </div>
+            <div class="map-readout-destination">
+              <span>目的地</span>
+              <strong id="route-map-destination">等待导航</strong>
+            </div>
+            <button id="route-map-locate" class="map-locate-button" type="button">
+              开启实时定位
+            </button>
+          </div>
+        </section>
+
+        <div class="capabilities">
+          <div>
+            <span>01</span>
+            <strong>价格</strong>
+            <small>透明、清晰</small>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>预约</strong>
+            <small>从容安排</small>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>服务</strong>
+            <small>随时响应</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="concierge-panel" aria-label="NavPark 停车礼宾">
+        <header class="chat-header">
+          <div>
+            <span class="chat-overline">CONCIERGE DESK</span>
+            <h2>需要怎样的停车协助？</h2>
+            <p>说出你的需求，NavPark 会为你整理好答案。</p>
+          </div>
+          <span class="voice-ready">
+            <i></i>
+            语音可用
+          </span>
+        </header>
+
+        <div id="setup-warning" class="setup-warning" hidden>
+          <span class="warning-icon">!</span>
+          <div>
+            <strong>DeepSeek 服务尚未配置</strong>
+            <span>请在 <code>.env</code> 中填写 <code>DEEPSEEK_API_KEY</code> 后重启服务。</span>
+          </div>
+        </div>
+
+        <section
+          id="conversation"
+          class="conversation"
+          aria-label="对话记录"
+          aria-live="polite"
+        >
+          <article class="message assistant">
+            <div class="message-avatar" aria-hidden="true">N</div>
+            <div class="message-body">
+              <span class="message-author">NAVPARK</span>
+              <p>您好，我是您的停车礼宾。请告诉我目的地、停车时间或需要了解的服务。</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="voice-console" aria-label="语音输入">
+          <button
+            id="voice-button"
+            class="voice-button"
+            type="button"
+            aria-pressed="false"
+          >
+            <span class="voice-rings" aria-hidden="true"></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 15.5a3.5 3.5 0 0 0 3.5-3.5V6a3.5 3.5 0 1 0-7 0v6a3.5 3.5 0 0 0 3.5 3.5Z"></path>
+              <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M8.5 21h7"></path>
+            </svg>
+          </button>
+          <div class="voice-copy">
+            <span class="voice-label">VOICE CONCIERGE</span>
+            <strong id="voice-title">轻触开始交谈</strong>
+            <span id="voice-status" role="status">允许麦克风后，说出你的停车需求</span>
+          </div>
+          <div class="equalizer" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </section>
+
+        <form id="chat-form" class="chat-form">
+          <label class="sr-only" for="question">输入停车问题</label>
+          <textarea
+            id="question"
+            name="question"
+            rows="2"
+            maxlength="2000"
+            placeholder="例如：离我最近的空车位在哪里？"
+            required
+          ></textarea>
+          <div class="form-actions">
+            <div class="input-options">
+              <label class="select-label">
+                <span class="sr-only">语音识别语言</span>
+                <select id="language">
+                  <option value="zh-CN">普通话</option>
+                  <option value="en-US">English</option>
+                </select>
+              </label>
+              <label class="auto-send">
+                <input id="auto-send" type="checkbox" checked>
+                <span>识别后自动发送</span>
+              </label>
+            </div>
+            <button id="send-button" class="send-button" type="submit">
+              发送
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 14-7-4.5 14-3-5.5L5 12Z"></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>NAVPARK · PARKING, COMPOSED.</span>
+      <span>语音由浏览器识别 · 回答由 DeepSeek 生成</span>
+    </footer>
+  </div>
+
+  <script src="/static/route-map.js?v=20261025-live-map" defer></script>
+  <script src="/static/app.js?v=20261025-mic-fix-live-map" defer></script>
+</body>
+</html>

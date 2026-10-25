@@ -1,0 +1,311 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1200" viewBox="0 0 1920 1200">
+  <defs>
+    <pattern id="paperDots" width="7" height="7" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.65" fill="#1d1e1c" opacity="0.055"/>
+    </pattern>
+    <pattern id="floorGrid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <path d="M26 0H0V26" fill="none" stroke="#1d1e1c" stroke-width="0.55" opacity="0.06"/>
+    </pattern>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#3a3127" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f1"/>
+      <stop offset="1" stop-color="#f4eee3"/>
+    </linearGradient>
+    <linearGradient id="inkPlate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#242522"/>
+      <stop offset="1" stop-color="#111210"/>
+    </linearGradient>
+    <style>
+      .sans { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .serif { font-family: "Baskerville", "Iowan Old Style", "SimSun", serif; }
+      .mono { font-family: "Consolas", "Cascadia Mono", monospace; }
+      .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 3px; }
+      .muted { fill: #777269; }
+      .faint { fill: #9a958b; }
+      .ink { fill: #1d1e1c; }
+      .paper-text { fill: #faf7f0; }
+      .small { font-size: 13px; }
+      .tiny { font-size: 10px; letter-spacing: 1.1px; }
+    </style>
+  </defs>
+
+  <rect width="1920" height="1200" fill="#e8e2d7"/>
+  <rect width="1920" height="1200" fill="url(#paperDots)"/>
+
+  <!-- Header -->
+  <g>
+    <circle cx="92" cy="83" r="31" fill="#1d1e1c"/>
+    <text x="92" y="94" text-anchor="middle" fill="#faf7f0" font-family="Georgia, serif" font-size="33" font-style="italic">N</text>
+    <text x="143" y="68" class="sans eyebrow ink">NAVPARK / PARKING DIRECTORY</text>
+    <text x="142" y="108" class="serif ink" font-size="40">星河中心停车场</text>
+    <text x="143" y="136" class="sans small muted">B1–B3 场内布局与实时空位示意 · 演示数据</text>
+  </g>
+  <g text-anchor="end">
+    <text x="1848" y="69" class="sans eyebrow muted">LIVE DEMO SNAPSHOT</text>
+    <text x="1848" y="111" class="serif ink" font-size="38">08 / 15</text>
+    <text x="1848" y="136" class="sans small muted">个空位 · 3 个楼层 · 1 个推荐车位</text>
+  </g>
+  <line x1="72" y1="175" x2="1848" y2="175" stroke="#1d1e1c" stroke-opacity="0.16"/>
+  <line x1="72" y1="175" x2="430" y2="175" stroke="#a86748" stroke-width="3"/>
+
+  <!-- B1 card -->
+  <g transform="translate(72, 215)">
+    <rect width="576" height="760" rx="20" fill="url(#paper)" stroke="#1d1e1c" stroke-opacity="0.12" filter="url(#softShadow)"/>
+    <text x="30" y="54" class="serif ink" font-size="39">B1</text>
+    <text x="96" y="50" class="sans eyebrow muted">ENTRY LEVEL</text>
+    <text x="96" y="72" class="sans small muted">入口层 · A / B / C 区</text>
+    <rect x="464" y="35" width="82" height="38" rx="19" fill="#edf1e7" stroke="#697955" stroke-opacity="0.35"/>
+    <circle cx="485" cy="54" r="5" fill="#697955"/>
+    <text x="498" y="59" class="sans small ink" font-weight="700">4 / 7</text>
+    <line x1="30" y1="94" x2="546" y2="94" stroke="#1d1e1c" stroke-opacity="0.12"/>
+
+    <!-- B1 floor outline -->
+    <rect x="24" y="116" width="528" height="505" rx="13" fill="#f4efe6" stroke="#1d1e1c" stroke-opacity="0.20"/>
+    <rect x="24" y="116" width="528" height="505" rx="13" fill="url(#floorGrid)"/>
+
+    <!-- Structural columns -->
+    <g fill="#1d1e1c" opacity="0.26">
+      <rect x="43" y="136" width="8" height="8"/>
+      <rect x="525" y="136" width="8" height="8"/>
+      <rect x="43" y="592" width="8" height="8"/>
+      <rect x="525" y="592" width="8" height="8"/>
+    </g>
+
+    <!-- Zone A -->
+    <rect x="58" y="139" width="166" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.23" stroke-dasharray="6 6"/>
+    <text x="74" y="166" class="serif ink" font-size="22">A 区</text>
+    <text x="117" y="164" class="sans tiny faint">A ZONE</text>
+    <rect x="74" y="184" width="132" height="51" rx="7" fill="#5d5c57" stroke="#343531" stroke-width="1.5"/>
+    <text x="84" y="207" class="sans tiny paper-text">A001 · 无障碍</text>
+    <text x="84" y="224" class="sans tiny paper-text" opacity="0.62">已占用</text>
+    <rect x="74" y="260" width="132" height="55" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="2"/>
+    <path d="M82 270h10l8 9-8 9H82z" fill="none" stroke="#697955" stroke-width="1.5"/>
+    <text x="108" y="284" class="sans small ink" font-weight="700">A018</text>
+    <text x="108" y="302" class="sans tiny" fill="#697955">空位 · 推荐</text>
+    <circle cx="184" cy="288" r="5" fill="#697955"/>
+    <rect x="74" y="338" width="132" height="51" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="1.5"/>
+    <text x="84" y="360" class="sans small ink" font-weight="700">A021</text>
+    <text x="84" y="377" class="sans tiny" fill="#697955">空位</text>
+    <circle cx="184" cy="364" r="4" fill="#697955"/>
+    <rect x="74" y="409" width="132" height="47" rx="7" fill="#f5ece4" stroke="#a86748" stroke-opacity="0.4"/>
+    <text x="84" y="429" class="sans tiny muted">A 区电梯厅</text>
+    <text x="84" y="444" class="sans tiny faint">约 18 m</text>
+
+    <!-- Zone B -->
+    <rect x="243" y="139" width="136" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.18" stroke-dasharray="6 6"/>
+    <text x="259" y="166" class="serif ink" font-size="22">B 区</text>
+    <text x="302" y="164" class="sans tiny faint">B ZONE</text>
+    <rect x="258" y="195" width="103" height="51" rx="7" fill="#5d5c57" stroke="#343531" stroke-width="1.5"/>
+    <text x="268" y="217" class="sans small paper-text" font-weight="700">B006</text>
+    <text x="268" y="234" class="sans tiny paper-text" opacity="0.62">已占用</text>
+    <rect x="258" y="262" width="103" height="51" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="1.5"/>
+    <text x="268" y="284" class="sans small ink" font-weight="700">B012</text>
+    <text x="268" y="301" class="sans tiny" fill="#697955">空位</text>
+    <rect x="258" y="349" width="103" height="87" rx="7" fill="#faf7f0" stroke="#1d1e1c" stroke-opacity="0.13"/>
+    <path d="M278 374v34m22-34v34m-11-17v34" stroke="#777269" stroke-width="1.4" fill="none"/>
+    <text x="309" y="390" class="sans tiny muted">电梯</text>
+    <text x="309" y="405" class="sans tiny faint">B1–B3</text>
+
+    <!-- Zone C -->
+    <rect x="398" y="139" width="134" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.18" stroke-dasharray="6 6"/>
+    <text x="414" y="166" class="serif ink" font-size="22">C 区</text>
+    <text x="457" y="164" class="sans tiny faint">C ZONE</text>
+    <rect x="413" y="195" width="103" height="51" rx="7" fill="#5d5c57" stroke="#343531" stroke-width="1.5"/>
+    <text x="423" y="217" class="sans small paper-text" font-weight="700">C003</text>
+    <text x="423" y="234" class="sans tiny paper-text" opacity="0.62">已占用</text>
+    <rect x="413" y="262" width="103" height="51" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="1.5"/>
+    <text x="423" y="284" class="sans small ink" font-weight="700">C009</text>
+    <text x="423" y="301" class="sans tiny" fill="#697955">空位</text>
+    <path d="M430 372h68v47h-68" fill="none" stroke="#777269" stroke-width="1.2"/>
+    <path d="M462 389l7 7-7 7" fill="none" stroke="#777269" stroke-width="1.2"/>
+    <text x="434" y="442" class="sans tiny faint">出口 EXIT →</text>
+
+    <!-- Driving lane and recommended route -->
+    <path d="M36 575H548" stroke="#1d1e1c" stroke-opacity="0.10" stroke-width="46" stroke-linecap="round"/>
+    <path d="M193 160V470M381 160V470" stroke="#1d1e1c" stroke-opacity="0.08" stroke-width="25" stroke-linecap="round"/>
+    <path d="M45 552V476H58V316H75" fill="none" stroke="#a86748" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="12 10"/>
+    <path d="M65 326l11-12 11 12" fill="none" stroke="#a86748" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="45" cy="552" r="10" fill="#a86748"/>
+    <circle cx="45" cy="552" r="18" fill="none" stroke="#a86748" stroke-opacity="0.3"/>
+    <rect x="22" y="582" width="69" height="28" rx="14" fill="#1d1e1c"/>
+    <text x="56" y="601" text-anchor="middle" class="sans tiny paper-text">入口 ↓</text>
+    <rect x="179" y="237" width="87" height="30" rx="15" fill="#a86748"/>
+    <text x="222" y="257" text-anchor="middle" class="sans tiny paper-text" font-weight="700">最近 · 26 m</text>
+
+    <!-- Direction and footer -->
+    <text x="31" y="640" class="sans tiny muted">↑ 推荐路线</text>
+    <text x="31" y="664" class="sans tiny faint">从入口右前方行驶，前往 A 区电梯厅旁</text>
+    <path d="M402 647h104" stroke="#1d1e1c" stroke-opacity="0.12"/>
+    <text x="402" y="669" class="sans tiny faint">坡道往 B2 ↓</text>
+    <rect x="25" y="700" width="526" height="34" rx="8" fill="#f1ece2"/>
+    <text x="40" y="722" class="sans small ink">空位 4 · 占用 3 · 推荐 A018</text>
+    <text x="535" y="722" text-anchor="end" class="mono tiny faint">LEVEL 01 / 03</text>
+  </g>
+
+  <!-- B2 card -->
+  <g transform="translate(672, 215)">
+    <rect width="576" height="760" rx="20" fill="url(#paper)" stroke="#1d1e1c" stroke-opacity="0.12" filter="url(#softShadow)"/>
+    <text x="30" y="54" class="serif ink" font-size="39">B2</text>
+    <text x="96" y="50" class="sans eyebrow muted">LOWER LEVEL 01</text>
+    <text x="96" y="72" class="sans small muted">下夹层 · A / B / C 区</text>
+    <rect x="464" y="35" width="82" height="38" rx="19" fill="#edf1e7" stroke="#697955" stroke-opacity="0.35"/>
+    <circle cx="485" cy="54" r="5" fill="#697955"/>
+    <text x="498" y="59" class="sans small ink" font-weight="700">2 / 5</text>
+    <line x1="30" y1="94" x2="546" y2="94" stroke="#1d1e1c" stroke-opacity="0.12"/>
+
+    <rect x="24" y="116" width="528" height="505" rx="13" fill="#f4efe6" stroke="#1d1e1c" stroke-opacity="0.20"/>
+    <rect x="24" y="116" width="528" height="505" rx="13" fill="url(#floorGrid)"/>
+    <g fill="#1d1e1c" opacity="0.26">
+      <rect x="43" y="136" width="8" height="8"/>
+      <rect x="525" y="136" width="8" height="8"/>
+      <rect x="43" y="592" width="8" height="8"/>
+      <rect x="525" y="592" width="8" height="8"/>
+    </g>
+
+    <rect x="58" y="139" width="166" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.23" stroke-dasharray="6 6"/>
+    <text x="74" y="166" class="serif ink" font-size="22">A 区</text>
+    <text x="117" y="164" class="sans tiny faint">A ZONE</text>
+    <rect x="74" y="205" width="132" height="51" rx="7" fill="#f4e7e2" stroke="#9b4135" stroke-width="1.5"/>
+    <text x="84" y="227" class="sans small ink" font-weight="700">A031</text>
+    <text x="84" y="244" class="sans tiny" fill="#9b4135">已预约</text>
+    <rect x="74" y="277" width="132" height="54" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="1.5"/>
+    <text x="84" y="299" class="sans small ink" font-weight="700">A035</text>
+    <text x="84" y="317" class="sans tiny" fill="#697955">空位 · 充电区旁</text>
+    <circle cx="184" cy="304" r="4" fill="#697955"/>
+    <rect x="74" y="409" width="132" height="47" rx="7" fill="#f5ece4" stroke="#a86748" stroke-opacity="0.4"/>
+    <text x="84" y="429" class="sans tiny muted">A 区电梯厅</text>
+    <text x="84" y="444" class="sans tiny faint">B1 ↔ B3</text>
+
+    <rect x="243" y="139" width="136" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.18" stroke-dasharray="6 6"/>
+    <text x="259" y="166" class="serif ink" font-size="22">B 区</text>
+    <text x="302" y="164" class="sans tiny faint">B ZONE</text>
+    <rect x="258" y="232" width="103" height="54" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="1.5"/>
+    <text x="268" y="254" class="sans small ink" font-weight="700">B014</text>
+    <text x="268" y="272" class="sans tiny" fill="#697955">空位</text>
+    <circle cx="345" cy="259" r="4" fill="#697955"/>
+    <rect x="258" y="349" width="103" height="87" rx="7" fill="#faf7f0" stroke="#1d1e1c" stroke-opacity="0.13"/>
+    <path d="M278 374v34m22-34v34m-11-17v34" stroke="#777269" stroke-width="1.4" fill="none"/>
+    <text x="309" y="390" class="sans tiny muted">电梯</text>
+    <text x="309" y="405" class="sans tiny faint">B1–B3</text>
+
+    <rect x="398" y="139" width="134" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.18" stroke-dasharray="6 6"/>
+    <text x="414" y="166" class="serif ink" font-size="22">C 区</text>
+    <text x="457" y="164" class="sans tiny faint">C ZONE</text>
+    <rect x="413" y="197" width="103" height="51" rx="7" fill="#5d5c57" stroke="#343531" stroke-width="1.5"/>
+    <text x="423" y="219" class="sans small paper-text" font-weight="700">C008</text>
+    <text x="423" y="236" class="sans tiny paper-text" opacity="0.62">已占用</text>
+    <rect x="413" y="265" width="103" height="51" rx="7" fill="#5d5c57" stroke="#343531" stroke-width="1.5"/>
+    <text x="423" y="287" class="sans small paper-text" font-weight="700">C021</text>
+    <text x="423" y="304" class="sans tiny paper-text" opacity="0.62">已占用</text>
+    <path d="M430 372h68v47h-68" fill="none" stroke="#777269" stroke-width="1.2"/>
+    <path d="M462 389l7 7-7 7" fill="none" stroke="#777269" stroke-width="1.2"/>
+    <text x="434" y="442" class="sans tiny faint">出口 EXIT →</text>
+
+    <path d="M36 575H548" stroke="#1d1e1c" stroke-opacity="0.10" stroke-width="46" stroke-linecap="round"/>
+    <path d="M193 160V470M381 160V470" stroke="#1d1e1c" stroke-opacity="0.08" stroke-width="25" stroke-linecap="round"/>
+    <path d="M46 545C94 488 105 415 176 351" fill="none" stroke="#a86748" stroke-width="2.2" stroke-dasharray="8 8" opacity="0.5"/>
+    <text x="31" y="640" class="sans tiny muted">↘ 推荐 A035</text>
+    <text x="31" y="664" class="sans tiny faint">靠近充电设施，适合短时停放</text>
+    <path d="M402 647h104" stroke="#1d1e1c" stroke-opacity="0.12"/>
+    <text x="402" y="669" class="sans tiny faint">坡道往 B3 ↓</text>
+    <rect x="25" y="700" width="526" height="34" rx="8" fill="#f1ece2"/>
+    <text x="40" y="722" class="sans small ink">空位 2 · 预约 1 · 占用 2</text>
+    <text x="535" y="722" text-anchor="end" class="mono tiny faint">LEVEL 02 / 03</text>
+  </g>
+
+  <!-- B3 card -->
+  <g transform="translate(1272, 215)">
+    <rect width="576" height="760" rx="20" fill="url(#paper)" stroke="#1d1e1c" stroke-opacity="0.12" filter="url(#softShadow)"/>
+    <text x="30" y="54" class="serif ink" font-size="39">B3</text>
+    <text x="96" y="50" class="sans eyebrow muted">LOWER LEVEL 02</text>
+    <text x="96" y="72" class="sans small muted">地下三层 · A / B / C 区</text>
+    <rect x="464" y="35" width="82" height="38" rx="19" fill="#edf1e7" stroke="#697955" stroke-opacity="0.35"/>
+    <circle cx="485" cy="54" r="5" fill="#697955"/>
+    <text x="498" y="59" class="sans small ink" font-weight="700">2 / 3</text>
+    <line x1="30" y1="94" x2="546" y2="94" stroke="#1d1e1c" stroke-opacity="0.12"/>
+
+    <rect x="24" y="116" width="528" height="505" rx="13" fill="#f4efe6" stroke="#1d1e1c" stroke-opacity="0.20"/>
+    <rect x="24" y="116" width="528" height="505" rx="13" fill="url(#floorGrid)"/>
+    <g fill="#1d1e1c" opacity="0.26">
+      <rect x="43" y="136" width="8" height="8"/>
+      <rect x="525" y="136" width="8" height="8"/>
+      <rect x="43" y="592" width="8" height="8"/>
+      <rect x="525" y="592" width="8" height="8"/>
+    </g>
+
+    <rect x="58" y="139" width="166" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.23" stroke-dasharray="6 6"/>
+    <text x="74" y="166" class="serif ink" font-size="22">A 区</text>
+    <text x="117" y="164" class="sans tiny faint">A ZONE</text>
+    <rect x="74" y="238" width="132" height="55" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="1.5"/>
+    <text x="84" y="260" class="sans small ink" font-weight="700">A002</text>
+    <text x="84" y="278" class="sans tiny" fill="#697955">空位 · 电梯厅旁</text>
+    <circle cx="184" cy="265" r="4" fill="#697955"/>
+    <rect x="74" y="409" width="132" height="47" rx="7" fill="#f5ece4" stroke="#a86748" stroke-opacity="0.4"/>
+    <text x="84" y="429" class="sans tiny muted">A 区电梯厅</text>
+    <text x="84" y="444" class="sans tiny faint">直达 B1 入口</text>
+
+    <rect x="243" y="139" width="136" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.18" stroke-dasharray="6 6"/>
+    <text x="259" y="166" class="serif ink" font-size="22">B 区</text>
+    <text x="302" y="164" class="sans tiny faint">B ZONE</text>
+    <rect x="258" y="238" width="103" height="55" rx="7" fill="#eef2e7" stroke="#697955" stroke-width="1.5"/>
+    <text x="268" y="260" class="sans small ink" font-weight="700">B020</text>
+    <text x="268" y="278" class="sans tiny" fill="#697955">空位</text>
+    <circle cx="345" cy="265" r="4" fill="#697955"/>
+    <rect x="258" y="349" width="103" height="87" rx="7" fill="#faf7f0" stroke="#1d1e1c" stroke-opacity="0.13"/>
+    <path d="M278 374v34m22-34v34m-11-17v34" stroke="#777269" stroke-width="1.4" fill="none"/>
+    <text x="309" y="390" class="sans tiny muted">电梯</text>
+    <text x="309" y="405" class="sans tiny faint">B1–B3</text>
+
+    <rect x="398" y="139" width="134" height="338" rx="9" fill="#fffaf0" stroke="#a86748" stroke-opacity="0.18" stroke-dasharray="6 6"/>
+    <text x="414" y="166" class="serif ink" font-size="22">C 区</text>
+    <text x="457" y="164" class="sans tiny faint">C ZONE</text>
+    <rect x="413" y="238" width="103" height="55" rx="7" fill="#5d5c57" stroke="#343531" stroke-width="1.5"/>
+    <text x="423" y="260" class="sans small paper-text" font-weight="700">C011</text>
+    <text x="423" y="278" class="sans tiny paper-text" opacity="0.62">已占用</text>
+    <path d="M430 372h68v47h-68" fill="none" stroke="#777269" stroke-width="1.2"/>
+    <path d="M462 389l7 7-7 7" fill="none" stroke="#777269" stroke-width="1.2"/>
+    <text x="434" y="442" class="sans tiny faint">出口 EXIT →</text>
+
+    <path d="M36 575H548" stroke="#1d1e1c" stroke-opacity="0.10" stroke-width="46" stroke-linecap="round"/>
+    <path d="M193 160V470M381 160V470" stroke="#1d1e1c" stroke-opacity="0.08" stroke-width="25" stroke-linecap="round"/>
+    <path d="M49 540H196V350" fill="none" stroke="#a86748" stroke-width="2.2" stroke-dasharray="8 8" opacity="0.45"/>
+    <circle cx="49" cy="540" r="7" fill="#a86748" opacity="0.65"/>
+    <text x="31" y="640" class="sans tiny muted">↑ 推荐 B020</text>
+    <text x="31" y="664" class="sans tiny faint">B 区长停车区，空间更宽松</text>
+    <text x="402" y="669" class="sans tiny faint">坡道返回 B2 ↑</text>
+    <rect x="25" y="700" width="526" height="34" rx="8" fill="#f1ece2"/>
+    <text x="40" y="722" class="sans small ink">空位 2 · 占用 1</text>
+    <text x="535" y="722" text-anchor="end" class="mono tiny faint">LEVEL 03 / 03</text>
+  </g>
+
+  <!-- Legend and footer -->
+  <rect x="72" y="1007" width="1168" height="74" rx="14" fill="#faf7f0" stroke="#1d1e1c" stroke-opacity="0.12"/>
+  <text x="98" y="1036" class="sans eyebrow muted">LEGEND / 图例</text>
+  <rect x="99" y="1050" width="24" height="14" rx="3" fill="#eef2e7" stroke="#697955"/>
+  <text x="132" y="1062" class="sans small muted">空位</text>
+  <rect x="201" y="1050" width="24" height="14" rx="3" fill="#5d5c57"/>
+  <text x="234" y="1062" class="sans small muted">已占用</text>
+  <rect x="307" y="1050" width="24" height="14" rx="3" fill="#f4e7e2" stroke="#9b4135"/>
+  <text x="340" y="1062" class="sans small muted">已预约</text>
+  <path d="M418 1057h42" stroke="#a86748" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 7"/>
+  <text x="470" y="1062" class="sans small muted">推荐路线</text>
+  <path d="M570 1057h31" stroke="#1d1e1c" stroke-opacity="0.10" stroke-width="12" stroke-linecap="round"/>
+  <text x="612" y="1062" class="sans small muted">场内行车道</text>
+  <line x1="733" y1="1031" x2="733" y2="1065" stroke="#1d1e1c" stroke-opacity="0.12"/>
+  <text x="754" y="1053" class="sans tiny faint">最近车位</text>
+  <text x="754" y="1070" class="sans small ink" font-weight="700">A018 · 距入口约 26 m</text>
+  <text x="1005" y="1053" class="sans tiny faint">实时快照</text>
+  <text x="1005" y="1070" class="sans small ink" font-weight="700">8 个空位 / 15 个车位</text>
+
+  <rect x="1258" y="1007" width="590" height="74" rx="14" fill="url(#inkPlate)"/>
+  <text x="1282" y="1038" class="sans eyebrow paper-text" opacity="0.58">SERVICE CONCIERGE</text>
+  <text x="1282" y="1063" class="sans small paper-text">说出“离我最近的空车位在哪里”，即可获取实时引导。</text>
+  <circle cx="1805" cy="1044" r="17" fill="#a86748"/>
+  <path d="M1799 1044h12m-5-5 5 5-5 5" fill="none" stroke="#faf7f0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <line x1="72" y1="1122" x2="1848" y2="1122" stroke="#1d1e1c" stroke-opacity="0.13"/>
+  <text x="72" y="1153" class="sans tiny faint">NAVPARK · PARKING, COMPOSED.</text>
+  <text x="1848" y="1153" text-anchor="end" class="sans tiny faint">虚构地点：上海市黄浦区星河路 88 号 · B1–B3 · 仅用于产品演示</text>
+</svg>
